@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://privacyops.azurewebsites.net/api/auth/login";
+      const url = "https://privacyops-portal.azurewebsites.net/api/auth/login";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       localStorage.setItem("district", res.district);

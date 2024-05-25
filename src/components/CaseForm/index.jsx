@@ -39,7 +39,7 @@ const CaseForm = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://privacyops.azurewebsites.net/api/cases";
+      const url = "https://privacyops-portal.azurewebsites.net/api/cases";
       const token = localStorage.getItem("token");
       const headers = { "x-auth-token": token };
 
@@ -81,7 +81,7 @@ const CaseForm = ({ user }) => {
 
   const handleDelete = async (id) => {
     try {
-      const url = `https://privacyops.azurewebsites.net/api/cases/${id}`;
+      const url = `https://privacyops-portal.azurewebsites.net/api/cases/${id}`;
       const token = localStorage.getItem("token");
       await axios.delete(url, { headers: { "x-auth-token": token } });
       setCases(cases.filter((c) => c._id !== id));
